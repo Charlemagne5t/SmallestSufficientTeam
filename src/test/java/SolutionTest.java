@@ -38,4 +38,27 @@ public class SolutionTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void smallestSufficientTeamTest3() {
+        String[] req_skills = {"gvp","jgpzzicdvgxlfix","kqcrfwerywbwi","jzukdzrfgvdbrunw","k"};
+        List<List<String>> people = new ArrayList<>(List.of(
+                new ArrayList<>(List.of()),
+                new ArrayList<>(List.of()),
+                new ArrayList<>(List.of()),
+                new ArrayList<>(List.of()),
+                new ArrayList<>(List.of("jgpzzicdvgxlfix")),
+                new ArrayList<>(List.of("jgpzzicdvgxlfix","k")),
+                new ArrayList<>(List.of("jgpzzicdvgxlfix","kqcrfwerywbwi")),
+                new ArrayList<>(List.of("gvp")),
+                new ArrayList<>(List.of("jzukdzrfgvdbrunw")),
+                new ArrayList<>(List.of("gvp","kqcrfwerywbwi"))
+
+        ));
+
+        int[] expected = {5,8,9};
+        int[] actual = new Solution().smallestSufficientTeam(req_skills, people);
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
 }
